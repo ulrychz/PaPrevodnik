@@ -1,0 +1,19 @@
+﻿@page "/prevodV1"
+
+<PageTitle>Převod v1</PageTitle>
+
+<h2>Převod V1</h2>
+<label>Palce: <input @onchange="UpdateValue" /></label>@*  ljkuhgkj *@
+<p>Hodnota v centimetrech je: @centimetry</p>
+@code {
+    private double palce;
+    private double centimetry;
+    private void UpdateValue(ChangeEventArgs e)
+    {
+        double.TryParse(e.Value.ToString(), out double pomocna);
+        palce = pomocna;
+        centimetry = palce * 2.54;
+    }
+
+   
+}
